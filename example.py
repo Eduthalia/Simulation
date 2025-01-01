@@ -51,3 +51,6 @@ repairers =simpy.Resource(env, capacity =3)
 
 spares= simpy.Container(env, init=20, capacity=20)
 
+env.process(factory_run(env, repairers, spares))
+
+env.run(until=8*5)
